@@ -43,11 +43,12 @@ print(os.path.abspath(".."))
 
 # 检测目录存不存在 存在返回True 不存在返回False
 print(os.path.exists("/Users/alice"))
+print(os.path.exists("/Users/alice/Desktop/U-PLAN/0824/demo6.py"))
 
-# 判断是不是文件
-print(os.path.isfile("/Users"))
-# 判断是不是目录
-print(os.path.isdir("/Users/alice/Desktop/U-PLAN/0824"))
-
-print(os.path.join("/Users/alice","Desktop/U-PLAN/0824"))
-print(os.listdir("."))
+# # 判断是不是文件
+# print(os.path.isfile("/Users"))
+# # 判断是不是目录
+# print(os.path.isdir("/Users/alice/Desktop/U-PLAN/0824"))
+#
+# print(os.path.join("/Users/alice","Desktop/U-PLAN/0824"))
+# print(os.listdir("."))
