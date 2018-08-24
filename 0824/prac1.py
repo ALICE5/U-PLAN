@@ -15,7 +15,11 @@ with open("name.txt") as file:
     # print(names)
     for i in names:
         name_num = find_item(i)
+        # print(name_num)
         name_dict[i] = name_num
+
+print(name_dict)
+
 
 name_sorted = sorted(name_dict.items(),key=lambda item:item[1],reverse=True)
 print(name_sorted[0:10])
