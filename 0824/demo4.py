@@ -65,4 +65,4 @@ y =lambda a,b : a+b
 print(y(2,5))
 
 my_dict = {"a":"aaa","b":"bbb"}
-print()
+print(my_dict.items())
