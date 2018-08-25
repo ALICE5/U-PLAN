@@ -17,7 +17,6 @@
 # 自动创建以文件后缀名为文件名的文件夹 将符合的文件归类于此
 
 
-
 import shutil
 import os
 
@@ -34,9 +33,3 @@ for file in files:
         shutil.move("./files/"+file,folder_name)
     else:
         shutil.move("./files/"+file,folder_name)
-
-#
-# 练习：
-# 1. 把jpg，png，gif文件夹中的所有文件移动到image文件夹中，然后删除jpg，png，gif文件夹
-# 2. 把doc，docx，md，ppt文件夹中的所有文件移动到document文件夹中，
-
