@@ -1,0 +1,4 @@
+.DS_Store
+pic1
+pic6
+pic3
