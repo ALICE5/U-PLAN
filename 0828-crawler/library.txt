@@ -1,17 +1,18 @@
-beautifulsoup4
-requests 
+1.
+beautifulsoup4: 可以从HTML或XML文件中提取数据的Python库 通过解析文档为用户提供需要抓取的数据.
+requests: requests是Python实现的最简单易用的HTTP客户端库 基于urllib编写.
 
-html5lib      
-lxml 
+html5lib: 是Python的一个解析库 可以像Web浏览器一样解析html页面. 
+lxml: 是Python的一个解析库 支持HTML和XML的解析 支持XPath解析方式. 
 
+numpy: 是一个由多维数组对象和用于处理数组的例程集合组成的库.
+pypng: 允许使用纯Python读取和写入PNG图像文件. 
+           
+wxpy: 是在itchat基础上开发的微信个人功能服务API 基本可以实现微信各种拓展功能.
+PyQRCode: wxpy的依赖库 二维码生成库. 
+  
 
-numpy 
-
-pip    
-
-
-pypng         
-PyQRCode            
-wxpy          
-
-urllib3 
+2.
+查看: pip3 list  
+安装: pip3 install xxx
+卸载: pip3 uninstall xxx
