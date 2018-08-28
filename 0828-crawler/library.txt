@@ -1,0 +1,17 @@
+beautifulsoup4
+requests 
+
+html5lib      
+lxml 
+
+
+numpy 
+
+pip    
+
+
+pypng         
+PyQRCode            
+wxpy          
+
+urllib3 
