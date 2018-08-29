@@ -8,7 +8,7 @@ headers = {
 
 web_data = requests.get(url,headers=headers)
 Soup = BeautifulSoup(web_data.text,"lxml")
-# print(web_data.text)
+print(web_data.text)
 
 titles = Soup.select("#houseBasicInfo > p")
 for title in titles:
