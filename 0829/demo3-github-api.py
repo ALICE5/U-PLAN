@@ -1,4 +1,4 @@
-# http://docs.python-requests.org/zh_CN/latest/user/quickstart.html
+# Requests文档: http://docs.python-requests.org/zh_CN/latest/user/quickstart.html
 # 报错解决方案: pip3 install -U requests[security]
 
 import requests
