@@ -8,10 +8,18 @@ import time
 api = "https://api.github.com/repos/channelcat/sanic"
 web_page = "https://github.com/channelcat/sanic"
 
-last_date = "2018-08-29"
-
 api_data = requests.get(api)
 dict_data = api_data.json()
 
-print(dict_data)
+# print(dict_data)
 
+last_date = "2018-08-19"
+current_date = dict_data["updated_at"]
+
+# time.sleep(2)
+# webbrowser.open("http://www.baidu.com")
+
+while True:
+    if current_date > last_date:
+        webbrowser.open(web_page)
+        time.sleep(600)

@@ -1,9 +1,16 @@
-# api = "https://api.douban.com/v2/movie/in_theaters"
-# web_page = "http://movie.douban.com/"
+# https://api.douban.com/v2/movie/in_theaters
 
+import requests
+import webbrowser
 
+api = "https://api.douban.com/v2/movie/in_theaters"
+web_page = "http://movie.douban.com/"
 
-# current_date = dict_data[""]
+api_data = requests.get(api)
+dict_data = api_data.json()
 
-# time.sleep(2)
-# webbrowser.open("http://www.baidu.com")
+# print(dict_data)
+
+# 最近热映
+for data in dict_data["subjects"] :
+    print(data)
