@@ -1,0 +1,21 @@
+首先 启动服务器端: sudo mongod
+然后 启动应用端: sudo mongo
+
+
+show dbs:显示数据库列表
+show collections：显示当前数据库中的集合
+use db_name：切换当前数据库
+db.x.find()：对当前数据库中的x集合进行查找 若无条件则列出所有
+
+db.createCollection("x"):创建名为x的集合
+db.dropDatabase():删除当前使用数据库 (首先use database)
+db.collection.drop():删除当前聚集集合
+
+
+cd /usr/local/mongodb/bin 
+
+mongoexport -d database -c collection -o xx.json  导出成json文件
+mongoexport -d database -c collection --type=csv -f key1,key2 -o xx.csv  导出成csv文件
+
+mongoimport -d database -c collection --file xx.json  导入json文件
+mongoimport -d database -c collection --type=csv --file  xx.csv  导入csv文件
