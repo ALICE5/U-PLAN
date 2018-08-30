@@ -1,0 +1,83 @@
+导出csv文件：
+
+ALICEdeMBP:~ alice$ sudo -i
+Password:
+ALICEdeMBP:~ root# cd /usr/local/mongodb/bin 
+ALICEdeMBP:bin root# mongoexport -d mayi_db -c yanhan --type=csv -f title,price,image -o mayi_yanhan.csv
+2018-08-30T18:51:47.611+0800	connected to: localhost
+2018-08-30T18:51:47.613+0800	exported 48 records
+
+
+
+进入mongodb查看新建的数据库和数据集合：
+
+> show dbs;
+admin    0.000GB
+config   0.000GB
+local    0.000GB
+mayi     0.000GB
+mayi2    0.000GB
+mayi3    0.000GB
+mayi_db  0.000GB
+test     0.000GB
+unicom   0.000GB
+> use mayi_db;
+switched to db mayi_db
+> show collections;
+yanhan
+> db.yanhan.find()
+{ "_id" : ObjectId("5b87c9eafcfb8b79f80d9561"), "title" : "东直门簋街/工体/三里屯/南锣鼓巷一居", "image" : "http://i1.mayi.com/mayi80/M20/GR/RV/5HR54EQGP66QXY9QYH56S3VRNR5WS5.jpg_566x377c.jpg", "price" : 518 }
+{ "_id" : ObjectId("5b87c9eafcfb8b79f80d9562"), "title" : "【三里屯】团结湖/太古里/工体旁安睡一居", "image" : "http://i1.mayi.com/mayi37/M35/SX/ZJ/A6C8UFFP5MSW646E7SN3YW9YLHDP2W.jpg_566x377c.jpg", "price" : 438 }
+{ "_id" : ObjectId("5b87c9eafcfb8b79f80d9563"), "title" : "北京鸟巢边上的家", "image" : "http://i1.mayi.com/mayi64/M24/RT/RZ/8PWJ66WAT7DPQ6PXANEM98D5JF7JWR.jpg_566x377c.jpg", "price" : 396 }
+{ "_id" : ObjectId("5b87c9eafcfb8b79f80d9564"), "title" : "奇幻暖屋COI国贸三里屯双井温馨舒适1居", "image" : "http://i1.mayi.com/mayi60/M87/JU/IK/CYYV95FGNKKBPL7WXUYZ7UU2QCASB6.jpg_566x377c.jpg", "price" : 468 }
+{ "_id" : ObjectId("5b87c9eafcfb8b79f80d9565"), "title" : "【寒舍】鸟巢 水立方 奥林匹克 大一居", "image" : "http://i1.mayi.com/mayi97/M87/BC/YI/BHG9XLG7QHMGQZE9US48BDHS3BATY9.jpg_566x377c.jpg", "price" : 498 }
+{ "_id" : ObjectId("5b87c9eafcfb8b79f80d9566"), "title" : "天安门故宫景点旅游度假无杂费两居", "image" : "http://i1.mayi.com/mayi69/M85/OU/DN/BZVYJ2SNYWPK8PA3BFY47664YHF5N2.jpg_566x377c.jpg", "price" : 498 }
+{ "_id" : ObjectId("5b87c9eafcfb8b79f80d9567"), "title" : "近鸟巢，安贞，对外经贸，5号线两居", "image" : "http://i1.mayi.com/mayi70/M80/WS/HC/REDUTV3S49DM3WUZSFG8N3F4DL492C.jpg_566x377c.jpg", "price" : 400 }
+{ "_id" : ObjectId("5b87c9eafcfb8b79f80d9568"), "title" : "【望京】将台路站/颐堤港旁马卡龙大床房", "image" : "http://i1.mayi.com/mayi13/M79/ZP/WO/CBJW9ZXBUT9HGTPJRQ3WUYL5RVHS78.jpg_566x377c.jpg", "price" : 458 }
+{ "_id" : ObjectId("5b87c9eafcfb8b79f80d9569"), "title" : "北京儿研所 国贸 天安门特色小屋", "image" : "http://i1.mayi.com/mayi94/M52/VS/EH/UW5T6AAGQASL4QFUAH23AA5MPVWKFW.jpg_566x377c.jpg", "price" : 431 }
+{ "_id" : ObjectId("5b87c9eafcfb8b79f80d956a"), "title" : "朝阳区国贸双井苹果社区北区精品三人间", "image" : "http://i1.mayi.com/mayi15/M89/ZS/YP/M3T3RDJLPC7EQF3A9BYHLUESWUQ4EA.jpg_566x377c.jpg", "price" : 508 }
+{ "_id" : ObjectId("5b87c9eafcfb8b79f80d956b"), "title" : "回家公寓4*双大床房近故宫王府井协和医院", "image" : "http://i1.mayi.com/mayi43/M76/MX/PH/RACJMXY5MBLT5B39KYW2YFCTAM82C3.jpg_566x377c.jpg", "price" : 599 }
+{ "_id" : ObjectId("5b87c9eafcfb8b79f80d956c"), "title" : "北京国贸CBD百子湾 赛洛城LOFT公寓", "image" : "http://i1.mayi.com/mayi30/M57/ZC/UL/SKTW2BBPQA6QLS9VZCYY4XLWVC6WEF.jpg_566x377c.jpg", "price" : 518 }
+{ "_id" : ObjectId("5b87c9eafcfb8b79f80d956d"), "title" : "近望京鸟巢奥体立水桥南情调一居-浪漫小屋", "image" : "http://i1.mayi.com/mayi96/M90/EJ/MH/Y5GN5MM82JHR4YLMLZRUTE3WCWAHN2.jpg_566x377c.jpg", "price" : 468 }
+{ "_id" : ObjectId("5b87c9eafcfb8b79f80d956e"), "title" : "青年路地铁6号线大悦城 探险之家 一居", "image" : "http://i1.mayi.com/mayi64/M97/SD/JF/K8UDY5TFKL38D7LH7G7YK92NHCKY4A.jpg_566x377c.jpg", "price" : 468 }
+{ "_id" : ObjectId("5b87c9eafcfb8b79f80d956f"), "title" : "地铁6号线青年路朝阳大悦城豪华舒适一居", "image" : "http://i1.mayi.com/mayi16/M78/VI/XD/S8MW4TDQM928K5BM359AQUSNSGSN75.jpg_566x377c.jpg", "price" : 398 }
+{ "_id" : ObjectId("5b87c9eafcfb8b79f80d9570"), "title" : "沿海赛洛城x-box游戏主题房", "image" : "http://i1.mayi.com/mayi91/M53/OR/IJ/P2T7CMGMHME323R2P25G2UTFEV7GA8.jpg_566x377c.jpg", "price" : 398 }
+{ "_id" : ObjectId("5b87c9eafcfb8b79f80d9571"), "title" : "鸟巢水立方/国家会议中心/临地铁站5号线", "image" : "http://i1.mayi.com/mayi64/M40/VE/RW/3XJGG85PBR7SDEKT9AK544FX4BUUR4.jpg_566x377c.jpg", "price" : 588 }
+{ "_id" : ObjectId("5b87c9eafcfb8b79f80d9572"), "title" : "6号线青年路地铁口朝阳大悦城直达南锣鼓巷", "image" : "http://i1.mayi.com/mayi79/M19/PR/YL/NGCPC7UHBEV2TXB5FQSZDMPLBRXE6A.jpg_566x377c.jpg", "price" : 368 }
+{ "_id" : ObjectId("5b87c9eafcfb8b79f80d9573"), "title" : "酒仙桥798／地铁旁北欧风格豪华一居室", "image" : "http://i1.mayi.com/mayi32/M22/MA/NR/JZUWY8CAL47UMHARL8WLZDK3RZZBK7.jpg_566x377c.jpg", "price" : 458 }
+{ "_id" : ObjectId("5b87c9eafcfb8b79f80d9574"), "title" : "地铁直通国贸，天安门，传媒大学温馨两居室", "image" : "http://i1.mayi.com/mayi59/M15/HA/UP/TMKM58NE8ZE3Z9TUWEKT3GDWYTQTXC.jpg_566x377c.jpg", "price" : 398 }
+Type "it" for more
+> it
+{ "_id" : ObjectId("5b87c9eafcfb8b79f80d9575"), "title" : "运动员高档公寓", "image" : "http://i1.mayi.com/mayi25/M42/IY/NW/3MG2YAWW444BWAB5Q47GYH4NTJRSD2.jpg_566x377c.jpg", "price" : 228 }
+{ "_id" : ObjectId("5b87c9eafcfb8b79f80d9576"), "title" : "直达南锣鼓巷@朝阳大悦城@青年汇精致小窝", "image" : "http://i1.mayi.com/mayi19/M94/CD/LU/ZX9VPVBHDFEG3NW4DADWXTAGQ6DWWU.jpg_566x377c.jpg", "price" : 417 }
+{ "_id" : ObjectId("5b87c9eafcfb8b79f80d9577"), "title" : "近硫璃厂老北京杂院", "image" : "http://i1.mayi.com/mayi80/M45/SE/YP/Z3LT6MDK5B4GQ94HPU3YJYVQDJRB3Y.jpg_566x377c.jpg", "price" : 558 }
+{ "_id" : ObjectId("5b87c9eafcfb8b79f80d9578"), "title" : "免费接或送机首都机场新国展地铁mini墅", "image" : "http://i1.mayi.com/mayi78/M96/RN/XE/65BWV9X5NZTG7RVTA6Z7NYS4GMGG8F.jpg_566x377c.jpg", "price" : 418 }
+{ "_id" : ObjectId("5b87c9ebfcfb8b79f80d9579"), "title" : "密云休闲小筑家庭房", "image" : "http://i1.mayi.com/mayi63/M12/LB/EH/ZJV72CMAU2F75CPSZKTA8CLVVQE8S4.jpg_566x377c.jpg", "price" : 480 }
+{ "_id" : ObjectId("5b87c9ebfcfb8b79f80d957a"), "title" : "西站(茶贸中心/湾子地铁)阳光温馨一居室", "image" : "http://i1.mayi.com/mayi46/M62/TN/HZ/WE9DXEPUK5YDFV59B3CLRXR7PV2NEP.jpg_566x377c.jpg", "price" : 296 }
+{ "_id" : ObjectId("5b87c9ebfcfb8b79f80d957b"), "title" : "方庄天坛崇文门五号线地铁二环边舒适一居", "image" : "http://i1.mayi.com/mayi93/M27/FU/LB/ZF94SM7MRDMTV34GPBFRWNPBMHBGUW.jpg_566x377c.jpg", "price" : 418 }
+{ "_id" : ObjectId("5b87c9ebfcfb8b79f80d957c"), "title" : " 鸟巢国家会议中心中科院地铁15号北沙滩", "image" : "http://i1.mayi.com/mayi56/M61/MA/YP/PHN7888VHL3PQXGM62JX2TFG3KSH2H.jpg_566x377c.jpg", "price" : 418 }
+{ "_id" : ObjectId("5b87c9ebfcfb8b79f80d957d"), "title" : "【爱之家公寓】4号线生物医药基地舒适一居", "image" : "http://i1.mayi.com/mayi48/M79/GK/KZ/YEVWU8LH7Y76T3TDVPMSQ5BSPCPYEL.jpg_566x377c.jpg", "price" : 358 }
+{ "_id" : ObjectId("5b87c9ebfcfb8b79f80d957e"), "title" : "天安门故宫附近", "image" : "http://i1.mayi.com/mayi53/M11/KB/PW/SN9852V28YWMBNAFGSH34DR69NBTZQ.jpg_566x377c.jpg", "price" : 698 }
+{ "_id" : ObjectId("5b87c9ebfcfb8b79f80d957f"), "title" : "崇文门同仁医院 北京站 天安门—四季民宿", "image" : "http://i1.mayi.com/mayi45/M85/XX/WS/VYRUJQ5HBSW5YT4YGAWT3RVBWJVWTV.jpg_566x377c.jpg", "price" : 438 }
+{ "_id" : ObjectId("5b87c9ebfcfb8b79f80d9580"), "title" : "北京南站附近西单博爱医院4号线公益西桥3", "image" : "http://i1.mayi.com/mayi21/M16/FD/YU/W7JKQ9TMDZXZANZ4T8S39FA8YXXULV.jpg_566x377c.jpg", "price" : 379 }
+{ "_id" : ObjectId("5b87c9ebfcfb8b79f80d9581"), "title" : "国贸百子湾蓝色观景文艺loft", "image" : "http://i1.mayi.com/mayi43/M27/GA/BK/52EETV4KZU5TYRGDCZX4YD94THN49S.jpg_566x377c.jpg", "price" : 498 }
+{ "_id" : ObjectId("5b87c9ebfcfb8b79f80d9582"), "title" : "海淀上地圆明园颐和园百望山清华北大农大", "image" : "http://i1.mayi.com/mayi68/M57/ZF/TM/YMFYCCPNQFQXNL8HZ5BJWLD4MMR72N.jpg_566x377c.jpg", "price" : 438 }
+{ "_id" : ObjectId("5b87c9ebfcfb8b79f80d9583"), "title" : "自由空间", "image" : "http://i1.mayi.com/mayi64/M87/MM/XF/FD8U7PPK8SSM8CLVB5TA65QKUVZMT8.jpg_566x377c.jpg", "price" : 308 }
+{ "_id" : ObjectId("5b87c9ebfcfb8b79f80d9584"), "title" : "北苑会议中心、鸟巢，立水桥南站豪华大床", "image" : "http://i1.mayi.com/mayi74/M76/HK/IL/XTX94Q2KF3BGCPK8J92ZE2P7L9HBHA.jpg_566x377c.jpg", "price" : 458 }
+{ "_id" : ObjectId("5b87c9ebfcfb8b79f80d9585"), "title" : "近天安门故宫天坛王府井，崇文门地铁旁套房", "image" : "http://i1.mayi.com/mayi57/M85/HP/LI/DPR6QWCLWQ9ER42FABGER8VTC5XJRE.jpg_566x377c.jpg", "price" : 598 }
+{ "_id" : ObjectId("5b87c9ebfcfb8b79f80d9586"), "title" : "颐和园旁的温馨阳光房", "image" : "http://i1.mayi.com/mayi28/M10/TF/KA/AL9CHCU7Q6AD3KK834XUM4UQYAG2JR.jpg_566x377c.jpg", "price" : 390 }
+{ "_id" : ObjectId("5b87c9ebfcfb8b79f80d9587"), "title" : "对外经贸鸟巢大两居精装家庭民宿", "image" : "http://i1.mayi.com/mayi53/M37/OA/SK/ULRYY22EM6QZZYKSC8QHG9RWZ8G3HU.jpg_566x377c.jpg", "price" : 578 }
+{ "_id" : ObjectId("5b87c9ebfcfb8b79f80d9588"), "title" : "望京SOHO美院凯德798一居长租", "image" : "http://i1.mayi.com/mayi99/M41/HR/PE/84A6GA8UX2AG5XYJDHQ4W2TG385YKW.jpg_566x377c.jpg", "price" : 438 }
+Type "it" for more
+> it
+{ "_id" : ObjectId("5b87c9ebfcfb8b79f80d9589"), "title" : "三元桥亮马桥地铁三里屯国贸速达南北通透", "image" : "http://i1.mayi.com/mayi53/M71/ZW/MI/LFV5LBASCNWG7AQ4E7P94ACFV2G39Q.jpg_566x377c.jpg", "price" : 600 }
+{ "_id" : ObjectId("5b87c9ebfcfb8b79f80d958a"), "title" : "中日友好医院首都机场三元桥站温馨家庭套房", "image" : "http://i1.mayi.com/mayi94/M54/ZR/OX/JZYZBZ32Y9DAQ3AGX5UKMXNPZB6B7F.jpg_566x377c.jpg", "price" : 588 }
+{ "_id" : ObjectId("5b87c9ebfcfb8b79f80d958b"), "title" : "古北水镇长城源著的水镇蓝天", "image" : "http://i1.mayi.com/mayi64/M30/RA/GK/DKCRSHL4WFLM4TS7B4F457RCGSUJ7U.jpg_566x377c.jpg", "price" : 420 }
+{ "_id" : ObjectId("5b87c9ebfcfb8b79f80d958c"), "title" : "紧邻西站南站，中国戏曲学院，丽泽商务区内", "image" : "http://i1.mayi.com/mayi46/M22/PX/GT/SN4L7HY7ZUCRRWVPL3G3KBZLXAB8PK.jpg_566x377c.jpg", "price" : 408 }
+{ "_id" : ObjectId("5b87c9ebfcfb8b79f80d958d"), "title" : "世纪民宿免费车位紧邻6号线舒适一居采光棒", "image" : "http://i1.mayi.com/mayi60/M77/JF/IV/7KSTMMT83LK4ED88L32R2QQFGXZUF2.jpg_566x377c.jpg", "price" : 308 }
+{ "_id" : ObjectId("5b87c9ebfcfb8b79f80d958e"), "title" : "家原2号 近五颗松可加床 可做饭", "image" : "http://i1.mayi.com/mayi91/M12/FN/JZ/PRMAY5SHZKYDDLGB3SQMNBFN378LGL.jpg_566x377c.jpg", "price" : 388 }
+{ "_id" : ObjectId("5b87c9ebfcfb8b79f80d958f"), "title" : "【鸟巢水立方】马甸桥奥林匹克公园温馨大房", "image" : "http://i1.mayi.com/mayi61/M67/IX/IK/CVD9NC6ZM8BBHQBUFVRYE9Y9EFAV2J.jpg_566x377c.jpg", "price" : 428 }
+{ "_id" : ObjectId("5b87c9ebfcfb8b79f80d9590"), "title" : "十里河，欢乐谷朝阳医院浪漫大两居", "image" : "http://i1.mayi.com/mayi77/M60/PL/WI/BXRHM3DLB52JUXR966HG2E8FXWVB6G.jpg_566x377c.jpg", "price" : 658 }
+> 
+
+
