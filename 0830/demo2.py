@@ -32,8 +32,7 @@ for item in img_sheet.find({"index":{"$lt":5}}):
 # cd /usr/local/mongodb/bin
 # mongoexport -d unicom -c img_sheet --type=csv -f index,img_path -o img_sheet.csv
 
-#
-# mongoimport -d unicom -c img --file img_sheet.json
 
+# mongoimport -d unicom -c img --file img_sheet.json
 
 # mongoimport -d unicom -c img --type csv --headerline --file  img_sheet.csv
