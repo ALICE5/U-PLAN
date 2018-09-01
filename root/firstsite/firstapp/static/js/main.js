@@ -1,0 +1,3 @@
+function attackEnemy() {
+	alert("stupid!")
+}

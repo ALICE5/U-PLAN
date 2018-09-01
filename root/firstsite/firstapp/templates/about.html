@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Charts</title>
+</head>
+<body>
+
+    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+
+{#    <script src="https://cdn.bootcss.com/jquery/3.3.1/core.js"></script>#}
+    <script src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts-en.common.js"></script>
+    <script>
+
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: 'U-Plan'
+            },
+            tooltip: {},
+            legend: {
+                data: ['Volume']
+            },
+            xAxis: {
+                data: ["Boys", "Girls", "Women", "Men", "Dog"]
+            },
+            yAxis: {},
+            series: [{
+                name: 'Volume',
+                type: 'bar',
+                data: [55, 25, 40, 30, 5]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+
+
+    </script>
+</body>
+</html>
