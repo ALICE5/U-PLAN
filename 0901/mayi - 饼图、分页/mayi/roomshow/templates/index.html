@@ -1,0 +1,77 @@
+{% load static %}
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="{% static 'css/mui.css' %}" rel="stylesheet" />
+	</head>
+
+	<body>
+
+<header class="mui-bar mui-bar-nav">
+      <h1 class="mui-title">蚂蚁短租</h1>
+</header>
+
+<div class="mui-content">
+      <ul class="mui-table-view">
+          {% for item in RoomInfo %}
+              <li class="mui-table-view-cell">
+                  <a class="mui-navigate-right">
+                      {{ item.title}}
+                  </a >
+              </li>
+          {% endfor %}
+      </ul>
+  </div>
+
+<div id="container" style="min-width:400px;height:400px"></div>
+
+		<script src="{% static 'js/mui.js' %}"></script>
+        <script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+		<script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+		<script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+		<script type="text/javascript">
+            var result = {{result | safe}};
+			Highcharts.chart('container', {
+				chart: {
+					plotBackgroundColor: null,
+					plotBorderWidth: null,
+					plotShadow: false,
+					type: 'pie'
+				},
+				title: {
+					text: '蚂蚁租房'
+				},
+				tooltip: {
+					pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+				},
+				plotOptions: {
+					pie: {
+						allowPointSelect: true,
+						cursor: 'pointer',
+						dataLabels: {
+							enabled: false
+						},
+						showInLegend: true
+					}
+				},
+				series: [{
+					name: 'Brands',
+					colorByPoint: true,
+					data: [{
+						name: '日租金大于500',
+						y: result.price_greater_percentage,
+						sliced: true,
+						selected: true
+					}, {
+						name: '日租金小于500',
+						y: result.price_less_percentage
+					}]
+				}]
+			});
+		</script>
+	</body>
+
+</html>
