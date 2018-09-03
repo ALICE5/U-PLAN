@@ -1,0 +1,86 @@
+操作系统：macOS High Sierra 10.13.6
+
+安装指令：
+（之前都安装过 所以全部卸载重装一遍）
+
+ALICEdeMBP:~ alice$ pip3 uninstall numpy
+Uninstalling numpy-1.13.1:
+  Would remove:
+    /Library/Frameworks/Python.framework/Versions/3.5/bin/f2py
+    /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/numpy-1.13.1.dist-info/*
+    /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/numpy/*
+Proceed (y/n)? y
+  Successfully uninstalled numpy-1.13.1
+You are using pip version 10.0.1, however version 18.0 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+ALICEdeMBP:~ alice$ pip3 install numpy
+Collecting numpy
+  Downloading https://files.pythonhosted.org/packages/8b/5f/a7765a144fd788135a5cad90bf4c144df3b6c3343a08fff4ff8f98217641/numpy-1.15.1-cp35-cp35m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl (24.4MB)
+    100% |████████████████████████████████| 24.4MB 25kB/s 
+Installing collected packages: numpy
+Successfully installed numpy-1.15.1
+You are using pip version 10.0.1, however version 18.0 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+
+
+
+ALICEdeMBP:~ alice$ pip3 uninstall pandas
+Uninstalling pandas-0.20.3:
+  Would remove:
+    /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/pandas-0.20.3.dist-info/*
+    /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/pandas/*
+Proceed (y/n)? y
+  Successfully uninstalled pandas-0.20.3
+You are using pip version 10.0.1, however version 18.0 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+ALICEdeMBP:~ alice$ pip3 install pandas
+Collecting pandas
+  Downloading https://files.pythonhosted.org/packages/e5/53/896de98b5798291aff041d3d1d3636ad2a6495f558aab9bdb064842394eb/pandas-0.23.4-cp35-cp35m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl (14.4MB)
+    100% |████████████████████████████████| 14.4MB 27kB/s 
+Requirement already satisfied: python-dateutil>=2.5.0 in /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages (from pandas) (2.6.1)
+Requirement already satisfied: numpy>=1.9.0 in /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages (from pandas) (1.15.1)
+Requirement already satisfied: pytz>=2011k in /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages (from pandas) (2017.2)
+Requirement already satisfied: six>=1.5 in /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages (from python-dateutil>=2.5.0->pandas) (1.10.0)
+Installing collected packages: pandas
+Successfully installed pandas-0.23.4
+You are using pip version 10.0.1, however version 18.0 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+
+
+
+ALICEdeMBP:~ alice$ pip3 uninstall matplotlib
+Uninstalling matplotlib-2.0.2:
+  Would remove:
+    /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/matplotlib-2.0.2-py3.5-nspkg.pth
+    /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/matplotlib-2.0.2.dist-info/*
+    /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/matplotlib/*
+    /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/mpl_toolkits/axes_grid/*
+    /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/mpl_toolkits/axes_grid1/*
+    /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/mpl_toolkits/axisartist/*
+    /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/mpl_toolkits/exceltools.py
+    /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/mpl_toolkits/gtktools.py
+    /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/mpl_toolkits/mplot3d/*
+    /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/mpl_toolkits/tests/*
+    /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/pylab.py
+Proceed (y/n)? y
+  Successfully uninstalled matplotlib-2.0.2
+You are using pip version 10.0.1, however version 18.0 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+ALICEdeMBP:~ alice$ pip3 install matplotlib
+Collecting matplotlib
+  Downloading https://files.pythonhosted.org/packages/5a/e5/1e533e040c55553d3f2773414434c439aee8d94de0bb2323dcec6e0ad823/matplotlib-2.2.3-cp35-cp35m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl (13.8MB)
+    100% |████████████████████████████████| 13.8MB 54kB/s 
+Requirement already satisfied: six>=1.10 in /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages (from matplotlib) (1.10.0)
+Requirement already satisfied: cycler>=0.10 in /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages (from matplotlib) (0.10.0)
+Requirement already satisfied: python-dateutil>=2.1 in /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages (from matplotlib) (2.6.1)
+Collecting kiwisolver>=1.0.1 (from matplotlib)
+  Downloading https://files.pythonhosted.org/packages/69/a2/421afa75b6470f34dd8129b6e86f9983d83381e907cea86da616502eedad/kiwisolver-1.0.1-cp35-cp35m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl (108kB)
+    100% |████████████████████████████████| 112kB 69kB/s 
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages (from matplotlib) (2.2.0)
+Requirement already satisfied: pytz in /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages (from matplotlib) (2017.2)
+Requirement already satisfied: numpy>=1.7.1 in /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages (from matplotlib) (1.15.1)
+Requirement already satisfied: setuptools in /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages (from kiwisolver>=1.0.1->matplotlib) (20.10.1)
+Installing collected packages: kiwisolver, matplotlib
+Successfully installed kiwisolver-1.0.1 matplotlib-2.2.3
+You are using pip version 10.0.1, however version 18.0 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
