@@ -34,17 +34,16 @@ def indexPage(request):
     limit = 10
     pagenator = Paginator(room_info, limit)
     index = 1
-    while True:
-        index += 1
-        # page = request.get("page",1).GET
-        page = request.GET.get("page",index)
-        loaded = pagenator.page(page)
-        time.sleep(3)
 
-        context = {
-            "RoomInfo": loaded
-            # "title": "中国联通"
-        }
+    page = request.GET.get("page",index)
 
-        return render(request,'index.html',context)
+    print(request)
+    print(request.GET)
+    loaded = pagenator.page(page)
+
+    context = {
+        "RoomInfo": loaded
+    }
+
+    return render(request,'index.html',context)
 

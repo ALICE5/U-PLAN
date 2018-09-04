@@ -24,6 +24,18 @@
               </li>
           {% endfor %}
       </ul>
+{#  分页效果的实现 #}
+    <div>
+        {% if RoomInfo.has_previous %}
+        <a href="?page={{ RoomInfo.previous_page_number }}">  < pre </a>
+        {% endif %}
+        <span> {{ RoomInfo.number }} of {{ RoomInfo.paginator.num_pages }} </span>
+        {% if RoomInfo.has_next %}
+        <a href="?page={{ RoomInfo.next_page_number }}">   next > </a>
+        {% endif %}
+    </div>
+
+
   </div>
 
 <div id="container" style="min-width:400px;height:400px"></div>
