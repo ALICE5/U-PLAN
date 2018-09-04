@@ -1,5 +1,5 @@
+# -*- coding:utf-8 -*-
 # 明确目标：分析会员与非会员的用户骑行平均时间
-
 import os
 import numpy as np
 import matplotlib.pyplot as plt
@@ -25,6 +25,7 @@ def get_mean_duration_by_type(clean_data_str_list,member_type):
         # 向量和标量的比较: 广播 (一组数和一个数怎么比较)
         # [Member,Member,Member,Member,Member ...] = "Member"
         bool_str = clean_data_str[0:,-1]==member_type
+        print(bool_str)
 
         # 用bool数组过滤后的数据
         filter_data_arr = clean_data_str[bool_str]
@@ -39,6 +40,24 @@ def show_save_results(member_mean_duration_list,casual_mean_duration_list):
         casual_mean_duration = casual_mean_duration_list[item]
         print("第{}个季度，会员骑行时长{:.2f}分钟，非会员骑行时长{:.2f}分钟".format(item+1,member_mean_duration,casual_mean_duration))
 
+    # 合并两个数组 numpy.array([],[])  转置 .transpose()
+    mean_duration_arr = np.array([member_mean_duration_list,casual_mean_duration_list])
+    print(mean_duration_arr.shape)
+    np.savetxt('./mean_duration.csv',mean_duration_arr,delimiter=",",header="Member,Casual",fmt="%.2f",comments="")
+
+
+    # matplotlib 展示数据
+    plt.figure()
+    plt.plot(member_mean_duration_list,color='g',linestyle='-',label='member mean time')
+    plt.plot(casual_mean_duration_list, color='r', linestyle='-', label='casual mean time')
+    plt.title("show")
+    plt.xlabel("jidu")
+    plt.ylabel("time")
+    plt.legend(loc="best")
+    plt.xticks(range(0,4),['Season1','Season2','Season3','Season4'])
+    plt.tight_layout()
+    plt.savefig('./mean_duration.png')
+    plt.show()
 
 
 clean_data_str = collect_clean_data()
@@ -47,3 +66,4 @@ a = get_mean_duration_by_type(clean_data_str,"Casual")
 b = get_mean_duration_by_type(clean_data_str,"Member")
 # print(b)
 show_save_results(a,b)
+

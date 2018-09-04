@@ -5,7 +5,6 @@
 # 如何去掉C.replace（str，"C"，""）
 # 如何用numpy转换数据类型 .astype('float')
 
-
 import numpy as np
 
 # 数据收集
@@ -28,3 +27,4 @@ print("摄氏温度:")
 print(c_temp_float)
 print("华氏温度:")
 print(f_temp_float)
+
