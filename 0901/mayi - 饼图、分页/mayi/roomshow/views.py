@@ -46,4 +46,3 @@ def indexPage(request):
     }
 
     return render(request,'index.html',context)
-
