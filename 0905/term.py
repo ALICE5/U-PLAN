@@ -26,7 +26,7 @@ data = {
 }
 
 
-for page in range(85,101):
+for page in range(201,301):
     print("第" + str(page) + "页")
     data["begin"] = page * 5
     content_json = requests.get(url, headers=headers, params=data).json()

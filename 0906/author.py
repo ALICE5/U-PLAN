@@ -1,6 +1,7 @@
 import  requests
 from bs4 import BeautifulSoup
 import time
+import json
 
 headers = '''
 Host: mp.weixin.qq.com
@@ -23,39 +24,22 @@ for h in headers:
         k, v = h.split(":", 1)
         d_headers[k] = v.strip()
 
-url = "https://mp.weixin.qq.com/mp/profile_ext?action=getmsg" \
-      "&__biz=MzA4NDI3NjcyNA==" \
-      "&f=json" \
-      "&offset=11" \
-      "&count=10" \
-      "&is_ok=1" \
-      "&scene=126" \
-      "&uin=777" \
-      "&key=777" \
-      "&pass_ticket=JlWvupzG2v%2Fc%2FL%2B2RIGSsJXmN%2B7sgkfLiTfvHqHov0DWUMxT5ndkkcLiXS4BTuWl" \
-      "&wxtoken=&appmsg_token=973_wy37kQhuGQU%252FedEiT_jTwMJclqrrZw34ivNSVA~~&x5=0" \
-      "&f=json"
+for i in range(0,700):
+    # 试一下range(650,700)
+    url = "https://mp.weixin.qq.com/mp/profile_ext?action=getmsg&__biz=MzA4NDI3NjcyNA==&f=json&offset="\
+          +str(i * 10)\
+          +"&count=10&is_ok=1&scene=126&uin=777&key=777&pass_ticket=JlWvupzG2v%2Fc%2FL%2B2RIGSsJXmN%2B7sgkfLiTfvHqHov0DWUMxT5ndkkcLiXS4BTuWl&wxtoken=&appmsg_token=973_wy37kQhuGQU%252FedEiT_jTwMJclqrrZw34ivNSVA~~&x5=0&f=json"
+    response = requests.get(url, headers=d_headers)
+    info = response.json()["general_msg_list"]
+    info2 = json.loads(info)["list"]
+    for i in info2:
+        url = i["app_msg_ext_info"]["content_url"]
+        date = time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(i['comm_msg_info']['datetime']))
+        title = i["app_msg_ext_info"]['title']
+        digest = i["app_msg_ext_info"]['digest']
+        print(url,date,title,digest)
+    time.sleep(20)
 
-data = {
-    "is_only_read":"1",
-    "req_id":"0701mMJ52qbzeA1jjnp6Ka88",
-    "pass_ticket":"B2a5rvISwTcdJf2822bRTSAdJVD%252F0SDHlew4fYsbIcAiLOYLDwWS6CKQ8kLamgWd",
-    "is_temp_url":"0",
-}
-
-params = {
-    "__biz": "MzA4NDI3NjcyNA%3D%3D",
-    "mid": "2649408955",
-    "sn": "9b6216579d86c8b5d757e52c8167c65e",
-    "idx": "1",
-    "key": "777",
-    "pass_ticket": "B2a5rvISwTcdJf2822bRTSAdJVD%252F0SDHlew4fYsbIcAiLOYLDwWS6CKQ8kLamgWd",
-    "appmsg_token": "973_CYbLL8pRKSas3e3EQo2nkuR79egeg_KanIBlQ_UFLhU6YBhCCV3Z8nMj0Br8OAnc34JRf0UARQLFsdht",
-}
-
-
-response = requests.get(url, headers=d_headers)
-print(response.json())
 
 
 
