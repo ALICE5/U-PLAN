@@ -30,3 +30,5 @@ mongoexport -d XinHuaShe -c Info --type=csv -f digest,url,date,title,likeNum,rea
 mongoimport -d XinHuaShe_RL -c read_like --type=csv --headerline  --file  XinHuaShe_Read_Like_2.csv
 
 mongoexport -d XinHuaShe_RL -c read_like --type=csv -f digest,url,date,title,likeNum,readNum -o XinHuaShe_Read_Like.csv
+
+mongoimport -d XinHuaShe2 -c Author --type=csv --headerline  --file  XinHuaShe_Author_info_1.csv

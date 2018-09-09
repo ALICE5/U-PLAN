@@ -7,16 +7,14 @@ from pymongo import MongoClient
 
 headers = '''
 Host: mp.weixin.qq.com
-Accept: */*
-X-Requested-With: XMLHttpRequest
-Accept-Language: zh-cn
 Accept-Encoding: br, gzip, deflate
-Content-Type: application/x-www-form-urlencoded; charset=UTF-8
-Origin: https://mp.weixin.qq.com
-User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 11_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15G77 MicroMessenger/6.7.2 NetType/WIFI Language/zh_CN
+Cookie: wxtokenkey=777; devicetype=iOS11.4.1; lang=zh_CN; pass_ticket=2GFU5+bnJtwnuhgiiot+5YjUTJ3dMSGDFI00tOzfG4ktTyebjVnxTs9k5mnV6NUZ; rewardsn=; version=16070228; wap_sid2=CJDO3L0MElxJcmNSZGtvMFZndVRZdk1jWG9vYmswT1ZpUHJaMFRTaDl5aXkzaUQ5dUlhVG0zbF9kNjV5T3FkR29ONkV2Sk53dHhzcnBSR3VMX0xMVkhKUVVfZ19ZYzBEQUFBfjDfhNTcBTgNQAE=; wxuin=3350669072
 Connection: keep-alive
-Referer: https://mp.weixin.qq.com/s?__biz=MzA4NDI3NjcyNA==&mid=2649409317&idx=4&sn=15718ce34770f44a4816b1335932371e&chksm=87f7c3beb0804aa88d76f45ec8051bfa6b5a98037b0854c6aa3a484566ee36b1b210cce63808&scene=4&ascene=0&devicetype=iOS11.4.1&version=16070228&nettype=WIFI&abtest_cookie=BQABAAgACgALABIAEwAFAJ%2BGHgAjlx4AT5keAFeZHgBomR4AAAA%3D&lang=zh_CN&fontScale=100&pass_ticket=tFfX%2FspHDnvdz2607%2Bf2jEeQG2Px%2BNbY9JZsyjOWSGxIakmbBtt0K3IrOt%2B2lmJS&wx_header=1
-Cookie: devicetype=iOS11.4.1; lang=zh_CN; pass_ticket=tFfX/spHDnvdz2607+f2jEeQG2Px+NbY9JZsyjOWSGxIakmbBtt0K3IrOt+2lmJS; rewardsn=; version=16070228; wap_sid2=CJDO3L0MElxybzBTSFozeHdEV3p6ZGVZUzBFNTFGSFRELTZ4Ujg4Y0FFVlkzUTB4X1IyalFRNmxXbVE0M0Q1eWNfNk96NUtwbjVqLXJtMW5MTVJ2NXYtNVZ0UFd1ODBEQUFBfjDIiNPcBTgNQAE=; wxtokenkey=777; wxuin=3350669072
+Accept: */*
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 11_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15G77 MicroMessenger/6.7.2 NetType/WIFI Language/zh_CN
+Referer: https://mp.weixin.qq.com/s?__biz=MzA4NDI3NjcyNA==&mid=2649409333&idx=4&sn=d4ef150420da69a0697ad66bb199bb44&chksm=87f7c3aeb0804ab8110348513f2ff5ba081e21e2d3bf5e4e1153d3ee478110f75ccdc4b83243&scene=4&ascene=0&devicetype=iOS11.4.1&version=16070228&nettype=WIFI&abtest_cookie=BQABAAgACgALABIAEwAFAJ%2BGHgAjlx4AT5keAFeZHgBomR4AAAA%3D&lang=zh_CN&fontScale=100&pass_ticket=2GFU5%2BbnJtwnuhgiiot%2B5YjUTJ3dMSGDFI00tOzfG4ktTyebjVnxTs9k5mnV6NUZ&wx_header=1
+Accept-Language: zh-cn
+X-Requested-With: XMLHttpRequest
 '''
 
 headers = headers.split("\n")
@@ -40,7 +38,7 @@ sheet2 = db['Comment_Count']
 timer = 0
 
 for link in enumerate(info.find()):
-    if int(link[0]) <= 714:
+    if int(link[0]) <= 1320:
         print(str(link[0]) + "篇文章执行完 跳过！")
         continue
     try:
@@ -76,12 +74,12 @@ for link in enumerate(info.find()):
             "uin": "777",
             "limit": "100",
             "key": "777",
-            "pass_ticket": "tFfX%252FspHDnvdz2607%252Bf2jEeQG2Px%252BNbY9JZsyjOWSGxIakmbBtt0K3IrOt%252B2lmJS",
+            "pass_ticket": "2GFU5%252BbnJtwnuhgiiot%252B5YjUTJ3dMSGDFI00tOzfG4ktTyebjVnxTs9k5mnV6NUZ",
             "wxtoken": "777",
             "devicetype": "iOS11.4.1",
             "f": "json",
             "x5": "0",
-            "appmsg_token": "973_5OOtYcRZI0bGd3x0l4S4xC69mecX2PH8vtsTkPN0v9W4NJe1jZGYIMjfJAdDLFi3i-v-T9L--Qoh598o"
+            "appmsg_token": "973_uwYDYU0v0gUOM0MsQv15h_Syr0kXF-vWZn_Fn8kSOzQBVaBmdinC-bhECvgmfFLkxDPGVVz5dVmyAoz9"
         }
 
         response = requests.get(url, headers=d_headers, params=params, verify=False)
@@ -113,7 +111,7 @@ for link in enumerate(info.find()):
             sheet.insert_one(data3)
         sheet2.insert_one(data2)
         print(str(link[0]) + "篇文章结束！")
-        time.sleep(30)
+        time.sleep(20)
     except:
         print(str(link[0]) + "篇文章出错跳过")
 

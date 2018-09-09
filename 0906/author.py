@@ -60,7 +60,7 @@ for i in range(103,300):
             "mid" : mid,
             "author" : author
         }
-        Author.insert_one(data)
+        # Author.insert_one(data)
 
     print("range", i , "结束")
     time.sleep(25)
