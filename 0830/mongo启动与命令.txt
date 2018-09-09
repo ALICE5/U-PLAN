@@ -19,3 +19,14 @@ mongoexport -d database -c collection --type=csv -f key1,key2 -o xx.csv  导出�
 
 mongoimport -d database -c collection --file xx.json  导入json文件
 mongoimport -d database -c collection --type=csv --file  xx.csv  导入csv文件
+
+
+
+
+mongoimport -d XinHuaShe_RL -c read_like --type=csv --headerline  --file  XinHuaShe_Read_Like_wjy.csv
+
+mongoexport -d XinHuaShe -c Info --type=csv -f digest,url,date,title,likeNum,readNum -o XinHuaShe_Read_Like_2.csv
+
+mongoimport -d XinHuaShe_RL -c read_like --type=csv --headerline  --file  XinHuaShe_Read_Like_2.csv
+
+mongoexport -d XinHuaShe_RL -c read_like --type=csv -f digest,url,date,title,likeNum,readNum -o XinHuaShe_Read_Like.csv
