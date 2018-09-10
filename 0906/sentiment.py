@@ -32,12 +32,12 @@ sentiment_list = []
 
 
 # 打开
-file = open('./result2.txt','r')
+file = open('./result.txt','r')
 
 for i in file.readlines():
-    if len(i.split('\t')) == 3 :
+    if len(i.split('\t')) == 2 :
         commment_list.append(i.split('\t')[0])
-        sentiment_list.append(i.split('\t')[2].replace('\n',""))
+        sentiment_list.append(i.split('\t')[1].replace('\n',""))
 # print(len(commment_list),len(sentiment_list))
 
 df = pd.DataFrame({

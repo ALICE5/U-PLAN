@@ -3,7 +3,7 @@ from pandas import DataFrame
 import jieba.analyse
 import csv
 import seaborn as sns
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 
 # datafile_path = '/Users/alice/Desktop/XinHuaShe_Comment_All.csv'
@@ -33,16 +33,13 @@ with open('./XinHuaShe_Comment_Cut.csv',encoding='utf-8',errors='ignore') as csv
     content = jieba.analyse.extract_tags(str_convert, topK=1000, withWeight=True,
                                          allowPOS=('ns', 'n', 'vn', 'nr', 'nrfg'))
     tf = dict((a[0], a[1]) for a in content)
-    print(tf)
-    # wordcloud_image = WordCloud(font_path='./FZQingFSJW_Cu.TTF', background_color='white', max_words=2000,
-    #                              scale=3).generate_from_frequencies(tf)
-    # wordcloud_image.to_file('comment.jpeg')
-    #
-    # plt.figure(figsize=(5, 5))
-    # plt.imshow(wordcloud_image, interpolation='bilinear')
-    #
-    # plt.axis('off')
-    # plt.show()
+    # print(tf)
+    sort_tf = sorted(tf.items(), key=lambda x: x[1], reverse=True)
+    sort_word_top100 = [i[0] for i in sort_tf][0:100]
+    print(sort_word_top100)
+    sort_freq_top100 = [i[1] for i in sort_tf][0:100]
+    print(sort_freq_top100)
+
 
     # 排序
 
