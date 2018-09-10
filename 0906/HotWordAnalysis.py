@@ -35,11 +35,12 @@ with open('XinHuaShe_Read_Like.csv',encoding='utf-8',errors='ignore') as csv_fil
 
     alice_coloring = np.array(Image.open(path.join(".", "new.jpeg")))
     wordcloud_image = WordCloud(font_path='./FZQingFSJW_Cu.TTF', background_color='white', max_words=2000,
-                                mask=alice_coloring).generate_from_frequencies(tf)
+                                mask=alice_coloring,scale=2).generate_from_frequencies(tf)
     # wordcloud_image.generate(tf)
     wordcloud_image.to_file('test2.jpeg')
 
-    wordcloud_image2 = WordCloud(font_path='./FZQingFSJW_Cu.TTF', background_color='white', max_words=2000).generate_from_frequencies(tf2)
+    wordcloud_image2 = WordCloud(font_path='./FZQingFSJW_Cu.TTF', background_color='white', max_words=2000,
+                                 scale=2).generate_from_frequencies(tf2)
     wordcloud_image2.to_file('test1.jpeg')
 
     plt.figure(figsize=(5,5))

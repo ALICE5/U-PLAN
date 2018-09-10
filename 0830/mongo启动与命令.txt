@@ -32,3 +32,17 @@ mongoimport -d XinHuaShe_RL -c read_like --type=csv --headerline  --file  XinHua
 mongoexport -d XinHuaShe_RL -c read_like --type=csv -f digest,url,date,title,likeNum,readNum -o XinHuaShe_Read_Like.csv
 
 mongoimport -d XinHuaShe2 -c Author --type=csv --headerline  --file  XinHuaShe_Author_info_1.csv
+
+mongoexport -d XinHuaShe3 -c Comment_Count --type=csv -f url,mid,elected_comment_total_cnt -o XinHuaShe_Comment_1.csv
+
+mongoimport -d xinsheshe -c comment --type=csv --headerline  --file  comment_total_wjy.csv
+
+------------------
+
+
+mongoexport -d XinHuaShe3 -c Comment --type=csv -f url,create_time,comment_content,mid,comment_like_num,nick_name reply -o XinHuaShe_Comment_all.csv
+
+mongoimport -d xinsheshe -c comment_all --type=csv --headerline  --file  allcomments_wjy.csv
+
+
+mongoexport -d xinsheshe -c comment_all --type=csv -f url,create_time,comment_content,mid,comment_like_num,nick_name reply -o XinHuaShe_Comment_All.csv
