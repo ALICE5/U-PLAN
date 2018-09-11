@@ -32,6 +32,7 @@ index0 = df[(df["sentiment"]>=0.9) & (df["sentiment"]<=1)]['commment'].count()
 
 x = ['[0,0.1)','[0.1,0.2)','[0.2,0.3)','[0.3,0.4)','[0.4,0.5)','[0.5,0.6)','[0.6,0.7)','[0.7,0.8)','[0.8,0.9)','[0.9,1.0]']
 y = [index1,index2,index3,index4,index5,index6,index7,index8,index9,index0]
+# print(y)
 
 # 这里的饼图只是简单表示。希望前端呈现的效果是：由[0,0.1)->[0.9,1.0]是由灰色像有色彩过度，突出0-1是由消极到积极的过度。
 plt.pie(y,labels=x,autopct='%1.2f%%')

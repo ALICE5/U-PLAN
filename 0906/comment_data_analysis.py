@@ -3,8 +3,9 @@ from pandas import DataFrame
 import jieba.analyse
 import csv
 import seaborn as sns
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 from wordcloud import WordCloud
+import numpy as np
 
 # datafile_path = '/Users/alice/Desktop/XinHuaShe_Comment_All.csv'
 # data_df = pd.read_csv(datafile_path)
@@ -39,6 +40,20 @@ with open('./XinHuaShe_Comment_Cut.csv',encoding='utf-8',errors='ignore') as csv
     print(sort_word_top100)
     sort_freq_top100 = [i[1] for i in sort_tf][0:100]
     print(sort_freq_top100)
+
+    heatmap = np.array(sort_freq_top100).reshape((10, 10))
+    heatmapwords = np.array(sort_word_top100).reshape((10, 10))
+    fig, ax = plt.subplots()
+    im = ax.imshow(heatmap)
+    for i in range(10):
+        for j in range(10):
+            text = ax.text(j, i, heatmapwords[i, j],
+                           ha="center", va="center", color="w")
+
+    ax.set_title("heat of words")
+    fig.tight_layout()
+    plt.rcParams['font.sans-serif'] = ['SimHei']
+    plt.show()
 
 
     # 排序
