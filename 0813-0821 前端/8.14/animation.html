@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 200px;
+				height: 200px;
+				background: red;
+				/*转换transform
+				 * translate()平移，只写一个参数，默认y方向为0
+				 * rotate()旋转,既可以是正数也可以是负数
+				 * scale()缩放，让你感觉元素变大或者变小,
+				 * 只写一个参数，默认x,y方向都发生变化
+				 */
+				/*transform: scale(2);*/
+				/*过渡，就是从一种状态直接过渡到最后的状态（0%-100%）
+				 transition-property:过渡的属性
+				 transition-delay:过渡的延迟等待时间,s
+				 transition-duration:过渡的执行时间，单位为S
+				 transition-timing-function:过渡的时间函数（贝塞尔曲线）
+				 * */
+				/*transition-property: all;
+				 * transition-duration: 4s;
+				transition-delay: 2s;
+				transition-timing-function: linear;*/
+				/*transition: all 4s 2s linear;*/
+				/*animation 动画 2-2-8
+				 * animation-name:动画名称，和想要执行的关键帧名字相关联
+				 * animation-duration：动画执行时间
+				 * animation-delay：动画延迟执行时间
+				 * animation-timing-fuction:动画的执行时间函数
+				 * animation-iteration-count:动画的执行次数,默认1，可以换成infinite无限次
+				   animation-fill-mode：动画的开始和结束执行状态。
+				   forwards:动画开始执行的状态和第一帧动画相同
+				   backwards:动画执行结束的状态和最后一帧动画相同
+				   both:forwards + backwards
+				   animation-play-state:动画的执行状态，paused，running
+				 * */
+				/*animation-name: box;
+				animation-duration: 4s;
+				animation-delay: 1s;
+				animation-timing-function: linear;
+				animation-iteration-count: 1;
+				animation-fill-mode: both;*/
+				animation: box 4s 1s linear 1 both;
+			}
+			.box:hover{
+				animation-play-state:paused;
+			}
+			@keyframes box{
+				0%{
+					width: 0px;
+				}
+				25%{
+					width: 200px;
+				}
+				50%{
+					width: 400px;
+				}
+				75%{
+					width: 600px;
+				}
+				100%{
+					width: 800px;
+				}
+			}
+			/*.box:hover{
+				transform: rotate(720deg) scale(2);
+			}*/
+		</style>
+	</head>
+	<body>
+		
+		<div class="box">
+			
+		</div>
+	</body>
+</html>

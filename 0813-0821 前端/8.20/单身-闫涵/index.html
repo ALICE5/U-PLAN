@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/icons-extra.css"/>
+    <style type="text/css">
+   			.mui-bar-nav{
+				background: #000000;
+			}
+			.mui-title{
+				color: #FFFFFF;
+				text-align: center;
+			}
+    </style>
+</head>
+<body>
+	
+	<header class="mui-bar mui-bar-nav">
+	    <h1 class="mui-title">靖欣婚介</h1>
+	</header>
+	
+	 <!--mb mh ml mt--> 
+
+	<div class="mui-content">
+	    <!--<button type="button" class="mui-btn mui-btn-blue">按钮</button>-->
+	</div>
+	
+	<nav class="mui-bar mui-bar-tab">
+	    <a class="mui-tab-item mui-active" href="sub1.html">
+	        <span class="mui-icon mui-icon-home"></span>
+	        <span class="mui-tab-label">首页</span>
+	    </a>
+	    <a class="mui-tab-item" href="2.0单身.html">
+	        <span class="mui-icon-extra mui-icon-extra-heart-filled"></span>
+	        <span class="mui-tab-label">单身</span>
+	    </a>
+	    <a class="mui-tab-item" href="sub3.html">
+	        <span class="mui-icon mui-icon-compose"></span>
+	        <span class="mui-tab-label">记录</span>
+	    </a>
+	    <a class="mui-tab-item" href="sub4.html">
+	        <span class="mui-icon mui-icon-paperplane"></span>
+	        <span class="mui-tab-label">活动</span>
+	    </a>
+	    <a class="mui-tab-item" href="sub5.html">
+	        <span class="mui-icon-extra mui-icon-extra-people"></span>
+	        <span class="mui-tab-label">我的</span>
+	    </a>
+	</nav>
+	
+	<script type="text/javascript">
+		
+		var subPages = ["sub1.html","2.0单身.html","sub3.html","sub4.html","sub5.html"];
+		var styles = {
+			top:"44px",
+			bottom:"50px"
+		}
+		
+		mui.plusReady(function() {
+				var currentWebView = plus.webview.currentWebview();
+				
+				for (var i = 0;i<subPages.length;i++) {
+					var sub = plus.webview.create(subPages[i],subPages[i],styles);
+					sub.hide();
+					currentWebView.append(sub);
+				}
+				plus.webview.show(subPages[0]);
+				
+				mui(".mui-bar-tab").on("tap","a",function(){
+					var href = this.getAttribute("href");
+					plus.webview.show(href,"zoom-fade-out",3000);
+				});
+			})
+		
+			
+	</script>
+</body>
+</html>

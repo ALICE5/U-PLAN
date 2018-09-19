@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="https://cdn.bootcss.com/fullPage.js/2.9.7/jquery.fullpage.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div id="fullpage">
+			<div class="section">第一屏</div>
+			<div class="section">第二屏</div>
+			<div class="section">
+				<div class="slide">第三屏的第一屏</div>
+				<div class="slide">第三屏的第二屏</div>
+				<div class="slide">第三屏的第三屏</div>
+				<div class="slide">第三屏的第四屏</div>
+			</div>
+			<div class="section">第四屏</div>
+		</div>
+
+		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+		<script src="js/jquery.easing.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.bootcss.com/fullPage.js/2.9.7/jquery.fullpage.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#fullpage").fullpage({
+					navigation:true,
+					navigationPosition:"left"
+				});
+			})
+		</script>
+	</body>
+
+</html>

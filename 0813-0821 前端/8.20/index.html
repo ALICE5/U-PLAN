@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<!--
+			ajax:Asynchronous(异步) javaScript 
+			and XML(数据格式)
+			另一种数据格式JSON(JavaScript对象表示法)
+			最早在IE4中采用
+		    google将其发扬光大 Gmail Youtube
+		    ajax将使得我们在更换部分网页数据的时候不用加载整个页面
+		-->
+		<!--
+			实现AJAX的步骤
+		-->
+		<script type="text/javascript">
+			//第一步，创建XMLHttpRequest 对象（IE7+）
+			//在IE5,IE6中有兼容
+			var request = null;
+			if (window.XMLHttpRequest) {
+				request = new XMLHttpRequest();
+			}else{
+				request = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			//第二步，调用XMLHttpRequest 对象的open方法,第二个参数就是服务器端地址
+			request.open("GET","username.json");
+			//第三步，监听readystatechange事件
+			//readystate:0-4，5种状态
+			//request.status:状态码200 404 500
+			request.onreadystatechange = function(){
+				if(request.readyState == 4&&request.status == 200){
+					var result = request.response;//字符串
+				    //JSON.parse()会将字符串包装成一个js对象
+				    result = JSON.parse(result);
+				   for (var i = 0;i<result.address.length;i++) {
+				   		console.log(result.address[i]);
+				   }
+				    
+				}
+			}
+			//第四步，向服务器发送请求
+			request.send();
+		</script>
+	</body>
+</html>

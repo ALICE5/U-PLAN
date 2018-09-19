@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#myCanvas {
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--第一步：引入canvas标签，铺好画布-->
+		<canvas id="myCanvas" width="800" height="600">
+			<!--对于低版本的浏览器，需要给用户一个提示-->
+			<p>您的浏览器版本过低，请升级</p>
+		</canvas>
+
+		<script type="text/javascript">
+			//第二步，得到canvas对象，调用它的上下文对象（拿起画笔）
+
+			//			setInterval(function() {
+			//				var myCanvas = document.getElementById("myCanvas");
+			//				var context = myCanvas.getContext("2d");
+			//				var x, y, r;
+			//				x = Math.random() * 799 + 1;
+			//				y = Math.random() * 599 + 1;
+			//				r = Math.random() * 99 + 1;
+			//				context.beginPath();
+			//				context.arc(x, y, r, 0, Math.PI * 2, false);
+			//				context.strokeStyle = "red";
+			//				context.closePath();
+			//				context.stroke();
+			//			}, 1000)
+			
+			var myCanvas = document.getElementById("myCanvas");
+			var context = myCanvas.getContext("2d");
+			var img = new Image();
+			img.src = "img/mario.png";
+			var i = 0;
+			var x = 10;
+			var flag = 1;
+			//加载图片
+			function move(){
+				context.clearRect(0,0,800,600);
+				if (x<=10) {
+					flag = 1;
+				}
+				if (x>=800) {
+					flag = -1;
+				}
+				x += flag*10;
+				if (i == 0) {
+					context.drawImage(img, 0, 0, 37, 47, x, 0, 37, 47);
+				}
+				if (i == 1) {
+					context.drawImage(img, 37, 0, 37, 47, x, 0, 37, 47);
+				}
+				if (i == 2) {
+					context.drawImage(img, 74, 0, 37, 47, x, 0, 37, 47);
+				}
+				i++;
+				if (i>=3) {
+					i=0;
+				}
+			}
+			img.onload = function() {
+				setInterval(function(){
+					move();
+				},100)
+			}
+
+			//画线
+			//			context.moveTo(400,300);
+			//			context.lineTo(400,600);
+			//			context.strokeStyle = "red";
+			//			context.stroke();
+			//			context.beginPath();
+			//			context.moveTo(10,10);
+			//			context.lineTo(100,100);
+			//			context.lineTo(10,100);
+			//			context.closePath();
+			//			context.stroke();
+
+			//			context.beginPath();
+			//			context.arc(300,200,100,0,Math.PI*2,false);
+			//			context.closePath();
+			//			context.stroke();
+
+			//context.arc(400,300,200,0,Math.PI/2,false);
+			//把起始点连接，填充封闭区域
+			//			context.fill();
+			//			context.strokeStyle = "red";
+			//			context.stroke();
+			//第三步，调用绘图API
+			//规划路径
+			//context.rect(100,100,200,200);
+			//规定图形的样式
+			//context.fillStyle = "#008000";
+			//context.strokeStyle = "aqua";
+			//调用绘制API
+			//context.fill();//实体
+			//context.stroke();//线框
+			//context.fillRect(100,100,200,200);
+			//context.strokeRect();
+		</script>
+	</body>
+
+</html>

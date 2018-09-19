@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			#icon,#icon2{
+				width: 12px;
+			}
+			#detail{
+				margin-left: 10px;
+				margin-top: 10px;
+			}
+			#info{
+				background-color: #ededed;
+				border: none;
+				margin-left:6px ;
+				margin-top: 6px;
+				color: #989898;
+			}
+			#location{
+				margin-left: 45px;
+			}
+			#footer{
+				width: 80%; 
+				/*border: 1px solid;*/
+				align-content: center;
+				margin-left: 10%;
+			}
+			#back{
+				color: #000000;
+			}
+		</style>
+		<script type="text/javascript" src="js/mui.js" ></script>
+	</head>
+
+	<body>
+		<!--<div>查看详情</div>-->
+		
+		<header class="mui-bar mui-bar-nav">
+		    <a href="2.0单身.html"> <span class="mui-icon mui-icon-back" id="back"></span></a>
+		    <h1 class="mui-title">会员详情</h1>
+		</header>
+		
+		<div class="mui-content" style="background-color: #FFFFFF;">
+		    <img src="img/小甜甜.jpg" style="width: 100%;"/>
+		    <div class="mui-media-body" id="detail" >小甜甜  <img src="img/girl.png" id="icon" /> 
+		    	<img src="img/location.png" id="icon2" style="margin-left: 56vw;"/> <font size="2">辽宁 沈阳</font>
+		    <p style="margin-top: 6px;">27岁 · 160cm · 2~6k · 水瓶座 · IT互联网</p>
+		    </div>
+		    <hr />
+		    
+		    <div class="mui-media-body" id="detail"> 好友印象
+		    	<p style="font-size: 16px; margin-top: 6px;">红娘说内容红娘说内容红娘说内容红娘说内容红娘说内容红娘说内容红娘说内容红娘说内容红娘说内容
+		    	红娘说内容红娘说内容红娘说内容红娘说内容</p>
+		    </div>
+		    <hr />
+		    
+		    <div class="mui-media-body" id="detail"> 基本资料 <br />
+		    	<button type="button" id="info">身高160cm</button><button type="button" id="info">高中</button><button type="button" id="info">收入2~6k</button>
+		    	<button type="button" id="info">已购房</button><br />
+		    	<button type="button" id="info">暂无购车计划</button><button type="button" id="info">通信电子，硬件研发</button><button type="button" id="info">偶尔喝</button>
+		    </div>
+		    <hr />
+		    
+		    <div class="mui-media-body" id="detail"> 择偶条件 <br />
+		    	<button type="button" id="info">170~180cm</button><button type="button" id="info">本科</button><button type="button" id="info">27~32岁</button>
+		    	<button type="button" id="info">已购房</button><br />
+		    </div>
+		    <hr />
+		    
+		    <div class="mui-media-body" id="detail"> 内心独白
+		    	<p style="font-size: 16px; margin-top: 6px;">内心独白内心独白内心独白内心独白内心独白内心独白内心独白内心独白内心独白内心独白内心独白内心独白
+		    	内心独白内心独白内心独白内心独白内心独白</p>
+		    </div>
+		    <hr />
+		    
+		    <div class="mui-media-body" id="detail"> 兴趣爱好
+		    	<p style="font-size: 16px; margin-top: 6px;">游泳、下棋</p>
+		    </div>
+		    
+		    <div id="footer">
+		    	<div lass="mui-media-body" style="border: 1px solid #C8C7CC; width: 50px; height: 50px;border-radius: 50%;display: inline-block;margin-left: 15px;" >
+					<img class="mui-media-object" src="img/1.png" style="margin-top: 10px; margin-left:9px; width: 30px; height: 26px;" onclick="mui.confirm('错过后，系统一段时间内不会再次推荐TA','提示',['知道了'])" >
+			</div>
+			<a href="2.1打赏.html">
+			<div lass="mui-media-body" style="border: 1px solid #C8C7CC; width: 50px; height: 50px;border-radius: 50%;display: inline-block;margin-left: 15px;" >
+				<img class="mui-media-object" src="img/2.png" style="margin-top: 10px; margin-left:9px; width: 30px; height: 26px;">
+			</div>
+			</a>
+			<a href="2.2红娘列表.html">
+			<div lass="mui-media-body" style="border: 1px solid #C8C7CC; width: 50px; height: 50px;border-radius: 50%;display: inline-block;margin-left: 15px;" >
+				<img class="mui-media-object" src="img/3.png" style="margin-top: 10px; margin-left:9px; width: 30px; height: 26px;">
+			</div>
+			</a>
+			<div lass="mui-media-body" style="border: 1px solid #C8C7CC; width: 50px; height: 50px;border-radius: 50%;display: inline-block;margin-left: 15px;" >
+				<img class="mui-media-object" src="img/4.png" style="margin-top: 10px; margin-left:9px; width: 30px; height: 26px;" onclick="mui.confirm('和TA通话需要办理集团电话号，可免费畅聊一千分钟，需要办理和您的红娘联系~','提示',['知道了'])">
+			</div>
+			</div>
+			<br />
+		</div>
+		
+		
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				swipeBack:true
+				});
+//			var a = document.getElementById("areturn");
+//			a.onclick(){
+//				mui.openWindow("2.0单身.html")
+//			};
+			
+		</script>
+	</body>
+
+</html>

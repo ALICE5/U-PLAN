@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#myCanvas{
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="myCanvas" width="80" height="50"> 
+			<p>您的浏览器版本过低 请升级</p>
+		
+		</canvas>
+
+		<script type="text/javascript">
+			var myCanvas = document.getElementById("myCanvas");
+			var content = myCanvas.getContext("2d");
+			var img = new Image();
+			img.src = "img/WechatIMG3.png";
+
+			var timer = 0;
+			var mario = setInterval(function(){
+//				console.log(timer);
+				content.clearRect(0,0,37,47);
+				content.drawImage(img,timer,0,37,47,0,0,37,47);
+				timer += 37
+				if (timer>74) {
+					timer = 0
+				}		
+			},200,timer);
+				
+		</script>
+	</body>
+</html>

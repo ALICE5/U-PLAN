@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.box {
+				width: 400px;
+				height: 500px;
+				background: red;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box" id="box">
+			<h1 align="center">中国联通</h1>
+		</div>
+		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+		<script type="text/javascript">
+//				$("#box").show();//显示
+				//$("#box").hide();//隐藏
+//				$("#box").slideDown();//下拉
+				//$("#box").slideUp();//上拉
+//				$("#box").slideToggle();//上下拉反复
+				//$("#box").fadeIn();//逐渐显示
+//				$("#box").fadeOut(5000);//逐渐隐藏
+			//JavaScript动态改变元素的高度
+			//var box = document.getElementById("box");
+//			box.style.height = "200px"
+//			var height = 500;
+//			var flag = 1;
+//			setInterval(function() {
+//				if(height <= 0) {
+//					flag = 1;
+//				}
+//				if (height>=500) {
+//					flag = -1;
+//				}
+//				height += flag*10;
+//				box.style.height = height +"px";
+//			}, 100);
+			
+			//同时改变背景颜色和文字内容
+			//			var box = document.getElementById("box");
+			//			box.style.background = "green";
+			//			box.innerHTML = "联通";
+
+			//链式语法
+			//			$("#box").css("background","green")
+			//					 .html("联通")
+			//					 .addClass("");
+			//javascript方式改变元素里面的内容
+			//var box1 = document.getElementById("box");
+			//			box1.innerText = ""
+			//box1.innerHTML = "联通";
+			//jQuery的方式改变元素内容
+			//			var box2 = $("#box");
+			//			box2.html("联通我信赖");
+			//javascript方式改变样式
+			//			var box1 = document.getElementById("box");
+			//			box1.style.backgroundColor = "green";
+			//			box1.style.fontSize = "20px";
+			//jQuery方式改变样式
+			//			var box2 = $("#box");
+			//			box2.css("background-color","blue");
+			//javascript方式选择元素
+			//			console.time()
+			//			for (var i = 0;i<10000;i++) {
+			//				document.getElementById("box");
+			//			}
+			//			console.timeEnd();
+
+			//			console.time()
+			//			for (var j = 0;j<10000;j++) {
+			//				$("#box");
+			//			}
+			//			console.timeEnd();
+			//			console.time()
+			//			for (var j = 0;j<10000;j++) {
+			//				$(".box");
+			//			}
+			//			console.timeEnd();
+			//			console.time()
+			//			for (var j = 0;j<10000;j++) {
+			//				$("div");
+			//			}
+			//			console.timeEnd();
+			//jQuery方式选择元素
+
+			//jquery:
+			//1.x 支持IE6，7，8
+			//2.x 不支持IE6，7，8
+			//3.x 不支持IE9，只保留了2.x的核心功能
+			//引入jQuery之后，你的html文档里面就有了一个全局对象
+			//叫jQuery或者$
+		</script>
+	</body>
+
+</html>

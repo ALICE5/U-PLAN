@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			#content{
+				background-image: url(img/backgroud.png); 
+				height: 40vh; 
+				width: 100%; 
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+			}
+			.imgs{
+				width: 7vw;
+				height: 5vh;
+				/*border: 1px solid;*/
+				margin-left: 2vw;
+				margin-top: 2vw;
+			}
+			#flexdiv{
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: row;
+				height: 15vh;
+				/*border:1px solid;*/
+			}
+		</style>
+		
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a href="2.2红娘列表.html"> <span class="mui-icon mui-icon-back" id="back"></span></a>
+		    <h1 class="mui-title">红娘详情</h1>
+		</header>
+		
+		<div class="mui-content" id="content">
+		    <img src="img/header.png" style="width: 40vw;"/>
+		    <div>
+		    <p style="font-size: 24px; color: #000000; font-weight: 500; float: left;">徐小平</p> &nbsp;
+		    <img src="img/lv8.png" style="width: 8vw; height: 6wh;"/>
+		    </div>
+		    <p >互联网 产品经理</p>
+		</div>
+		
+		<div style="background-color: #FFFFFF;margin-top: 0;height: 18vh;">
+			<p style="font-size: 18px;font-weight: 350;padding-top: 10px;padding-left: 10px;color: #000000;">社会承诺</p>
+		    <p style="margin-top: 6px;padding-left: 2vw;font-weight: 200; width: 98vw;">社会承诺社会承诺社会承诺社会承诺社会承诺社会承诺社会承诺社会承诺社会承诺</p>
+		</div>
+		
+		<div style="background-color: #FFFFFF; margin-top: 10px;">
+			<p style="font-size: 18px;font-weight: 350;padding-top: 10px;padding-left: 10px;color: #000000;">功臣展示</p>
+			<div id="flexdiv">
+				<img src="img/reward1.png" class="imgs" /><img src="img/reward1.png" class="imgs" /><img src="img/reward1.png" class="imgs" /><img src="img/reward2.png" class="imgs" />
+				<img src="img/reward2.png" class="imgs" /><img src="img/reward2.png" class="imgs" /><img src="img/reward3.png" class="imgs" /><img src="img/reward3.png" class="imgs" />
+				<img src="img/reward3.png" class="imgs" /><img src="img/reward1.png" class="imgs" /><img src="img/reward1.png" class="imgs" /><img src="img/reward3.png" class="imgs" />
+				<img src="img/reward1.png" class="imgs" /><img src="img/reward1.png" class="imgs" />
+			</div>
+		</div>
+		
+		<div style="background-color: #FFFFFF; margin-top: 10px;height: 7vh; display: flex; justify-content:space-between">
+			<p style="font-size: 18px;font-weight: 350;padding-top: 2vh;padding-left: 10px;color: #000000;float: left;">投票人数</p>
+			<p style="font-size: 14px;padding-top: 2vh;">3366人</p>
+		</div>
+		
+		<input type="button" style="background-color: #ff0389; border-color: #ff0389;position: fixed; bottom:0;width: 100%; height: 8vh; color: #ffffff; font-size: 16px;" value="给他投票"></input>
+		
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

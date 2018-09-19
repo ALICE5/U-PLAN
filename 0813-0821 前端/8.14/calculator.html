@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<input type="text" id="num1" value="0" />
+		<select id="operate">
+			<option value="+" title="add">+</option>
+			<option value="-" title="subtract">-</option>
+			<option value="×" title="multiply">×</option>
+			<option value="÷" title="divide">÷</option>
+		</select>
+		<input type="text" id="num2" value="0" />
+		<input type="button" id="btn" value="=" />
+		<input type="text" id="result" value="0" />
+
+		<script type="text/javascript">
+			var num1 = document.getElementById("num1");
+			var num2 = document.getElementById("num2");
+			var sign = document.getElementById("operate");
+			var btn = document.getElementById("btn");
+			var result = document.getElementById("result");
+			//获取符号
+			sign.onchange = function() {
+				var symbol = sign.options[sign.selectedIndex].title;
+				//点击等号
+				function count(symbol) {
+					switch(symbol) {
+						case "add":
+							add();
+							break;
+						case "subtract":
+							subtract();
+							break;
+						case "multiply":
+							muiltply();
+							break;
+						case "divide":
+							divide();
+							break;
+					}
+				}
+				btn.onclick = function() {
+					count(symbol);
+				}
+			}
+			
+			btn.onclick = function() {
+				add();
+			}
+			//+
+			function add() {
+				result.value = +num1.value + +num2.value;
+			}
+			//-
+			function subtract() {
+				result.value = num1.value - num2.value;
+			}
+			//*
+			function muiltply() {
+				result.value = num1.value * num2.value;
+			}
+			//÷
+			function divide() {
+				result.value = num1.value / num2.value;
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.main{
+				width: 100%;
+				height: 1000px;
+				text-align: center;
+				font-size: 150px;
+			}
+			.mask{
+				background: #ccc;
+				opacity: 0.75;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.login{
+				width: 670px;
+				height: 380px;
+				position: fixed;
+				left: 50%;
+				top: 50%;
+				margin-left: -335px;
+				margin-top: -190px;
+				background: #FFFFFF;
+			}
+			.loginContent{
+				width: 200px;
+				height: 380px;
+				margin: 100px auto;
+			}
+			.close{
+				font-size: 40px;
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<div class="">
+				<input type="button" name="btn" id="btn" value="登录" />
+			</div>
+			这是我网页的内容
+		</div>
+		<!--
+		<div class="login" id="login">
+			
+		</div>-->
+		
+		
+		<script type="text/javascript">
+			var oBtn = document.getElementById("btn");
+			oBtn.onclick = function(){
+				//蒙版
+				var oMask = document.createElement("div");
+				oMask.id = "mask";
+				oMask.className = "mask";
+				var sWidth = document.documentElement.scrollWidth;
+				var sHeight = document.documentElement.scrollHeight;
+				oMask.style.width = sWidth+"px";
+				oMask.style.height = sHeight+"px";
+				document.body.appendChild(oMask);
+				
+				//登录框
+				var oLogin = document.createElement("div");
+				oLogin.id = "login";
+				oLogin.className = "login";
+				oLogin.innerHTML = "<div class='loginContent' id='loginContent'>用户名：<input type='text'/><br>密码：<input type='password'/></div><div class='close' id='close'>✘</div>"
+				document.body.appendChild(oLogin);
+				
+				var oClose = document.getElementById("close");
+				oClose.onclick = oMask.onclick = function(){
+					document.body.removeChild(oMask);
+					document.body.removeChild(oLogin);
+				}
+			}
+		</script>
+	</body>
+</html>

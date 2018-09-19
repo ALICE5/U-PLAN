@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box {
+				width: 600px;
+				height: 300px;
+				background: red;
+				margin: 0 auto;
+			}
+			
+			#btn {
+				display: block;
+				width: 200px;
+				font-size: 25px;
+				text-align: center;
+				margin: 10px auto;
+			}
+		</style>
+		<script type="text/javascript">
+			//$(document).ready表示页面的dom结构加载完成就执行内部代码
+			//window.onload 表示页面的dom结构，图片，文字，音视频资源加载完成才执行内部代码
+
+			//			$(document).ready(function() {
+			//				$("#btn").click(function() {
+			//					//回调函数
+			//					$("#box").slideToggle();
+			//				})
+			//			})
+			//			$(function() {
+			//
+			//			})
+		</script>
+	</head>
+
+	<body>
+		<ul class="list" id="list">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+		<div class="box" id="box">
+			
+		</div>
+		<input type="button" name="btn" id="btn" value="显示/隐藏" />
+
+		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+		<script src="js/jquery.easing.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				//点击每一个li都会改变当前li的背景颜色
+//				var list = document.getElementById("list");
+//				var lis = list.getElementsByTagName("li");
+//				
+//				for (var i = 0;i<lis.length;i++) {
+//					lis[i].onclick = function(){
+//						this.style.background = "red";
+//					}
+//				}
+				
+//				$("#list").on("click","li",function(){
+//					$(this).css("background","red");
+//				})
+				
+//				$("#btn").click(function() {
+//					//回调函数
+//					$("#box").slideToggle();
+//				})
+//				$("#box").mouseover(function(){
+//					$("#box").css("background","green");
+//					$(this).css("background","green");
+//				})
+//				$("#box").mouseout(function(){
+//					$("#box").css("background","red");
+//					$(this).css("background","red");
+//				})
+			})
+		</script>
+	</body>
+
+</html>
